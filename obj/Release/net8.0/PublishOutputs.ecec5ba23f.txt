@@ -1,0 +1,7 @@
+C:\Users\pixel\OneDrive\Desktop\QuizApp\publish\QuizApp.exe
+C:\Users\pixel\OneDrive\Desktop\QuizApp\publish\appsettings.Development.json
+C:\Users\pixel\OneDrive\Desktop\QuizApp\publish\appsettings.json
+C:\Users\pixel\OneDrive\Desktop\QuizApp\publish\QuizApp.dll
+C:\Users\pixel\OneDrive\Desktop\QuizApp\publish\QuizApp.deps.json
+C:\Users\pixel\OneDrive\Desktop\QuizApp\publish\QuizApp.runtimeconfig.json
+C:\Users\pixel\OneDrive\Desktop\QuizApp\publish\QuizApp.pdb

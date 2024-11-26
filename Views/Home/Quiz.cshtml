@@ -1,0 +1,21 @@
+﻿@model QuizApp.Models.Question
+
+<h2>@Model.QuestionText</h2>
+
+<h3>Welcome to the quize, please check the answers where do you think its correct!</h3>
+
+<form method="post" asp-action="Quiz" asp-route-id="@Model.Id">
+    @for (int i = 0; i < Model.Answers.Count; i++)
+    {
+        <div>
+            <input type="checkbox" name="answer" value="@i" />
+            <label>@Model.Answers[i]</label>
+        </div>
+    }
+    <button type="submit">Submit Answer</button>
+</form>
+
+@if (ViewBag.Result != null)
+{
+    <p>@ViewBag.Result</p>
+}

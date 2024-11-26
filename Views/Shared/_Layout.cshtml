@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - QuizApp</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            margin: 20px auto;
+            width: 90%;
+        }
+
+        nav {
+            width: 20%;
+            background-color: #ffc107;
+            padding: 10px;
+        }
+
+            nav a {
+                display: block;
+                padding: 10px;
+                color: black;
+                text-decoration: none;
+            }
+
+        main {
+            width: 80%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .answered {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>General Knowledge Quiz App</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <a asp-controller="Home" asp-action="Index">Start</a>
+            @foreach (var question in QuizApp.Models.QuestionRepository.Questions)
+            {
+            <a asp-controller="Home" asp-action="Quiz" asp-route-id="@question.Id" class="@(question.UserAnswerIndexes.Any() ? "answered" : "")">Question @question.Id @(question.UserAnswerIndexes.Any() ? "(Answered)" : "")</a>
+            }
+            <a asp-controller="Home" asp-action="Summary">Summary</a>
+        </nav>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer>
+        &copy; 2024 - QuizApp | Questions Answered: @ViewBag.AnsweredCount out of 12 questions
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
